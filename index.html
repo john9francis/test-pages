@@ -1,1 +1,22 @@
-<h1>Hello</h1>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Call Python Function</title>
+</head>
+<body>
+    <button onclick="callPythonFunction()">Call Python</button>
+    <script>
+        function callPythonFunction() {
+            // Use AJAX to call the Python script
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "python_script.py", true);
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    alert(xhr.responseText);
+                }
+            };
+            xhr.send();
+        }
+    </script>
+</body>
+</html>
