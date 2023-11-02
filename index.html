@@ -1,21 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Call Python Function</title>
+    <title>Call JavaScript Function</title>
 </head>
 <body>
-    <button onclick="callPythonFunction()">Call Python</button>
+    <button onclick="callJavaScriptFunction()">Call JavaScript</button>
     <script>
-        function callPythonFunction() {
-            // Use AJAX to call the Python script
-            var xhr = new XMLHttpRequest();
-            xhr.open("GET", "python_script.py", true);
-            xhr.onreadystatechange = function() {
-                if (xhr.readyState == 4 && xhr.status == 200) {
-                    alert(xhr.responseText);
-                }
-            };
-            xhr.send();
+        function callJavaScriptFunction() {
+            // Call the JavaScript function directly
+            var result = myJavaScriptFunction();
+            alert(result);
+        }
+
+        function myJavaScriptFunction() {
+            return "Hello, World!";
         }
     </script>
 </body>
